@@ -6,7 +6,20 @@
   </head>
   <body>
     <h1><%= alpaca.name %></h1>
-    <p><img src="<%= alpaca.image %>" alt=""></p>
+    <div>
+
+      <form action="/alpacas" method="post">
+        <input type="text" name="like" value="1"></input>
+        <input type="text" name="id" value="<%=alpaca._id%>"></input>
+        <input type="submit" value="LIKE"></input>
+      </form>
+      <form action="/alpacas" method="post">
+        <input type="text" name="like" value="0"></input>
+        <input type="text" name="id" value="<%=alpaca._id%>"></input>
+        <input type="submit" value="DISLIKE"></input>
+      </form>
+      <img src="<%= alpaca.image %>" alt="">
+    </div>
     <p><%= alpaca.bio %></p>
   </body>
 </html>

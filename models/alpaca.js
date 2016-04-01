@@ -4,6 +4,7 @@ var alpacaSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true  },
   image: { type: String, required: true, unique: true },
   bio: String,
+  like: { type: Number, required: true },
   created_at: Date,
   updated_at: Date
 });
