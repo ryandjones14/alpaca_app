@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     if (err) {
       console.log(err);
     } else {
-      // console.log(alpaca);
+      console.log(alpaca);
     }
     res.render('alpacas/index', {title: 'OKAlpaca', alpaca: alpaca[Math.floor(Math.random()*alpaca.length)]});
   });
@@ -29,7 +29,7 @@ router.post('/', function (req, res) {
     if (err){
       console.log(err);
     } else {
-      console.log(alpaca);
+      // console.log(alpaca);
       res.redirect('/alpacas');
     }
   });
