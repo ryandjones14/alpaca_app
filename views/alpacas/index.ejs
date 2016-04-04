@@ -10,18 +10,20 @@
     <% if(alpaca.likes === 0) { %>
       <form action="/alpacas" method="post">
         <input type="hidden" name="like" value="1"></input>
-        <input type="hidden" name="id" value="<%=alpaca._id%>"></input>
+        <input type="hidden" name="id" value="<%=alpaca.id%>"></input>
         <input type="submit" value="LIKE"></input>
       </form>
     <% } else { %>
       <form action="/alpacas" method="post">
         <input type="hidden" name="like" value="0"></input>
-        <input type="hidden" name="id" value="<%=alpaca._id%>"></input>
+        <input type="hidden" name="id" value="<%=alpaca.id%>"></input>
         <input type="submit" value="DISLIKE"></input>
       </form>
     <% } %>
       <img src="<%= alpaca.image %>" alt="">
     </div>
     <p><%= alpaca.bio %></p>
+    <a href="/alpacas"><button type="button">Next</button></a>
+    <a href="/alpacas/liked" title=""><button type="button">See Your Alpacas</button></a>
   </body>
 </html>

@@ -6,6 +6,22 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p><img src="<%= llama %>" alt=""></p>
+    <% if (liked.length > 0){ %>
+      <% liked.forEach(function(alpaca){ %>
+      <div>
+        <h3><%= alpaca.name %></h3>
+        <img src="<%= alpaca.image %>" alt="<% alpaca.name %>'s picture" width="100"></img>
+        <p><%= alpaca.bio %></p>
+      </div>
+      <form action="/alpacas" method="post">
+        <input type="hidden" name="like" value="0"></input>
+        <input type="hidden" name="id" value="<%=alpaca.id%>"></input>
+        <input type="submit" value="DISLIKE"></input>
+      </form>
+      <% }) %>
+    <% } else { %>
+      <p>It doesn't look like you've liked any alpacas yet. Get out there adn live a little!</p>
+    <% } %>
+    <a href="/alpacas" title=""><button type="button">Back</button></a>
   </body>
 </html>
