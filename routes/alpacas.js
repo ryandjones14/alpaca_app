@@ -29,7 +29,7 @@ router.post('/', function (req, res) {
   // Update a document by another field
   var id = req.body.id;
   var like = req.body.like;
-  var backURL=req.header('Referer') || '/';
+  var backURL = req.header('Referer') || '/';
   console.log(like);
   Alpaca.findByIdAndUpdate(id, {likes: like}, function(err, alpaca) {
     if (err){
